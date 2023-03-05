@@ -1,3 +1,28 @@
+'''
+struct customer{
+name="None";
+order_value=0.0;
+paid_ammount=0.0;
+paying_method="None";
+tip=0.0;
+}v[n];
+
+struct max_tip{
+ ammount=0.0;
+ name="None";
+};
+
+struct max_order{
+ ammount=0.0;
+ name="None";
+};
+
+C++ version of the area with problems
+
+'''
+
+
+
 customer={
 "name"
 "order_value"
