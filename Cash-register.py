@@ -88,7 +88,11 @@ while exit_program :
 
 
 
-print("Today's total is :    "+str(order_total)+'$\n\n'+"The largest order of today is "+str(max_order.name)+"'s : "+str(max_order.ammount)+"$\n\n"+"The biggest tipper of today is : "+str(max_tip.name)+" "+str(max_tip.ammount)+"$\n\n"+str(nr_card)+" customers paid with card.\n\n"+str(nr_cash)+" customers paid with cash.\n\n" )
+print("Today's total is :    "+str(order_total)+'$\n\n')
+print("The largest order of today is "+str(max_order.name)+"'s : "+str(max_order.ammount)+"$\n\n")
+print("The biggest tipper of today is : "+str(max_tip.name)+" "+str(max_tip.ammount)+"$\n\n")
+print(str(nr_cash)+" customers paid with cash.\n\n" )
+print(str(nr_card)+" customers paid with card.\n\n")
 print('''
 
 
