@@ -1,45 +1,10 @@
-'''
-struct customer{
-name="None";
-order_value=0.0;
-paid_ammount=0.0;
-paying_method="None";
-tip=0.0;
-}v[n];
 
-struct max_tip{
- ammount=0.0;
- name="None";
-};
+from max_tip import Max_tip
+from customer import Customer
+from max_order import Max_order
 
-struct max_order{
- ammount=0.0;
- name="None";
-};
+customer=[]
 
-C++ version of the area with problems
-
-'''
-
-
-
-customer={
-"name"
-"order_value"
-"paid_ammount"
-"paying_method"
-"tip"
-}
-max_tip={
- "ammount"
- "name"
-}
-max_tip.ammount=0
-max_order={
- "ammount" 
- "name"
-}
-max_order.ammount=0
 ask=1
 i=0
 nr_cash=0
@@ -47,8 +12,23 @@ nr_card=0
 exit_program=1
 tip_total=0
 order_total=0
-customer=[]
+
+max_order_ammount=0.0
+max_order_name="None"
+
+
+max_tip_tip=0.0
+max_tip_name="None"
+
+
 while exit_program :
+ name="None"
+ order_value=0.0
+ paid_ammount=0.0
+ paying_method="None"
+ tip=0.0
+
+
  print('''
  -------------------------------------------------------------------------
  ************          |\   /|  * * *  \   |  |    |          ************
@@ -58,42 +38,42 @@ while exit_program :
  
 
  ''')
- customer[i].name=input("Please enter the name of your customer : ")
+ name=input("Please enter the name of your customer : ")
  
- customer[i].order_value=input("Please enter the value of their order : ")
+ order_value=float(input("Please enter the value of their order : "))
  
- if customer[i].order_value>max_order.ammount :
-  max_order.ammount=customer[i].orer_value
-  max_order.name=customer[i].name
+ if order_value>max_order_ammount :
+  max_order_ammount=order_value
+  max_order_name=name
 
- order_total+=float(customer[i].order_value)
+ order_total+=float(order_value)
  
- customer[i].paying_method=input("Cash or card : ")
+ paying_method=input("Cash or card : ")
  
 
  wrong_input=1
  while wrong_input==1 :
-  if customer[i].paying_method == "cash" :
+  if paying_method == "cash" :
    nr_cash+=1
    wrong_input=0
-  elif customer[i].paying_method == "card" :
+  elif paying_method == "card" :
    nr_card+=1
    wrong_input=0
   else:
    print('Wrong input, enter "cash" or "card" : ')
-   customer[i].paying_method=input()
+   paying_method=input()
  
- customer[i].paid_ammount=input("How much did they pay : ")
+ paid_ammount=input("How much did they pay : ")
  
- customer[i].tip=float(customer[i].paid_ammount)-float(customer[i].order_value)
+ tip=float(paid_ammount)-float(order_value)
  
  
  
- if customer[i].tip > max_tip.ammount :
-  max_tip.ammount=customer[i].tip
-  max_tip.name=customer[i].name
- tip_total+=float(customer[i].tip)
- 
+ if tip > max_tip_tip :
+  max_tip_tip=tip
+  max_tip_name=name
+ tip_total+=float(tip)
+ customer.append(Customer(name,order_value,paid_ammount,paying_method,tip))
  i+=1
  print('''
  Do you want to add another customer? 
@@ -109,13 +89,16 @@ while exit_program :
    ask=0
   else:
    print('Wrong input, please enter "y" or "n" : ')
+ 
 
 
+Max_tip(max_tip_name,max_tip_tip)
+Max_order(max_order_name,max_order_ammount)
 
 
 print("Today's total is :    "+str(order_total)+'$\n\n')
-print("The largest order of today is "+str(max_order.name)+"'s : "+str(max_order.ammount)+"$\n\n")
-print("The biggest tipper of today is : "+str(max_tip.name)+" "+str(max_tip.ammount)+"$\n\n")
+print("The largest order of today is "+str(max_order_name)+"'s : "+str(max_order_ammount)+"$\n\n")
+print("The biggest tipper of today is : "+str(max_tip_name)+" "+str(max_tip_tip)+"$\n\n")
 print(str(nr_cash)+" customers paid with cash.\n\n" )
 print(str(nr_card)+" customers paid with card.\n\n")
 print('''
