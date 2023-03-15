@@ -15,7 +15,6 @@ root.title("Cash Register")
 def counter () :
     customer_number+=1
 
-
 client_number_msg=Label(text= "Client number : "+str(customer_number), font=75)
 client_number_msg.grid(row=0,column=0)
 
@@ -24,8 +23,9 @@ order_value_msg=Label(text= "Order value : ", font=75)
 order_value_msg.grid(row=1,column=0)
 
 order_value=IntVar()
-order_value_entr=Entry(root, variable=order_value)
+order_value_entr=Entry(root)
 order_value_entr.grid(row=1,column=1)
+order_value=order_value_entr.get()
 
 
 payment_msg=Label(text= "Payment : ", font=75)
