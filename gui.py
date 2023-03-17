@@ -1,6 +1,6 @@
 from tkinter import*
 from customer import*
-
+from backend import*
 customer=[]
 customer_number=1
 
@@ -9,10 +9,10 @@ root = Tk()
 root.geometry("500x500")
 root.title("Cash Register")
 
-
-nr_cash=IntVar()
-nr_card=IntVar()
-order_value=IntVar()
+def __init__(self)
+ nr_cash=IntVar()
+ nr_card=IntVar()
+ order_value=IntVar()
 
 
 def counter () :
