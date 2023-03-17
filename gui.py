@@ -3,13 +3,16 @@ from customer import*
 
 customer=[]
 customer_number=1
-nr_cash=0
-nr_card=0
-order_value=0
+
 
 root = Tk()
 root.geometry("500x500")
 root.title("Cash Register")
+
+
+nr_cash=IntVar()
+nr_card=IntVar()
+order_value=IntVar()
 
 
 def counter () :
